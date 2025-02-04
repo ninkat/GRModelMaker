@@ -1,0 +1,8 @@
+# Ignore virtual environments
+chau/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.task
