@@ -1,6 +1,6 @@
 # GRModelMaker
 
-GRModelMaker processes a directory of training data and generates a directory containing a `.task` file trained on the data. These `.task` files are designed for use with [Google's MediaPipe Hand Gesture Classification model](https://ai.google.dev/edge/mediapipe/solutions/vision/gesture_recognizer).
+GRModelMaker processes a directory of training data and generates a directory containing a `.task` file trained on the data. These `.task` files are designed for use with [Google's MediaPipe Hand Gesture Classification model](https://ai.google.dev/edge/mediapipe/solutions/vision/gesture_recognizer). This program is an offline implementation of the [Google Colab Notebook](https://colab.research.google.com/github/googlesamples/mediapipe/blob/main/examples/customization/gesture_recognizer.ipynb) that performs a similar task. It provides the same functionality while allowing users to train a gesture recognition model entirely on their local machine.
 
 ---
 
@@ -71,3 +71,7 @@ GRModelMaker/
 │── sampledata/            # Sample data, ready-to-go
 │── venv/                  # Virtual environment (excluded from Git)
 
+--- 
+
+## Additional Notes
+I recommend using the [HaGRIDv2 (HAnd Gesture Recognition Image Dataset)](https://github.com/hukenovs/hagrid) for hand gesture classification training data. The dataset is huge and features a variety of distinct gestures. If you are running this program locally or are low on space, I would recommend using subsets of HaGRIDv2. I personally can vouch for [hagrid_subsets](https://huggingface.co/datasets/GestureDetectionConnoisseurs/hagrid_subsets) on Hugging Face.
