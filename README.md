@@ -1,24 +1,28 @@
 # GRModelMaker
 
-GRModelMaker takes a directory of training data and returns a directory containing a `.task` file trained on the data.
+GRModelMaker processes a directory of training data and generates a directory containing a `.task` file trained on the data. These `.task` files are designed for use with [Google's MediaPipe Hand Gesture Classification model](https://ai.google.dev/edge/mediapipe/solutions/vision/gesture_recognizer).
 
 ---
 
 ## Getting Started
 
-### Requirements
-
-- **Python Version**: This program has only been tested on **Python 3**.
-- **Dependencies**: Ensure you have the following libraries installed:
-  - **TensorFlow**
-  - **MediaPipe Model Maker**
-
-Install them via pip if necessary:
-
+### 🔹 Virtual Environment Setup
+It is recommended to use a **virtual environment** to manage dependencies.
+You can make a virtual environment with the following:
 ```sh
-pip install tensorflow mediapipe-model-maker
+python3 -m venv venv
+source venv/bin/activate
 ```
 
+### Install Dependencies from requirements.txt
+Once the virtual environment is activated, install dependencies:
+```sh
+pip install -r requirements.txt
+```
+Remember you can deactivate/leave the virtual environment with the following:
+```sh
+deactivate
+```
 ---
 
 ## Data Specifications
@@ -46,13 +50,24 @@ python3 grt.py –dataset_path <your_dataset_path>
 ### Example:
 
 ```sh
-python3 grt.py –dataset_path hagrid15A
+python3 grt.py –dataset_path sample
 ```
 
 Replace `<your_dataset_path>` with the path to your dataset.
 
----
+### Outputs
 
-## Outputs
+After running the program, the resulting `.task` file will be available in a directory named 'exported_model'.
 
-After running the program, the resulting `.task` file will be available in the specified output directory.
+--- 
+
+## Code Structure
+The code is organized as such:
+GRModelMaker/
+│── .gitignore             # Files ignored by Git
+│── grt.py                 # Main script to train the model
+│── README.md              # Project documentation
+│── requirements.txt       # Dependency list
+│── sampledata/            # Sample data, ready-to-go
+│── venv/                  # Virtual environment (excluded from Git)
+
