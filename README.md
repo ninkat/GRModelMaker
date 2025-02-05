@@ -44,13 +44,13 @@ The dataset for gesture recognition must follow the structure specified by Googl
 To execute the program, use the following command:
 
 ```sh
-python3 grt.py –dataset_path <your_dataset_path>
+python3 -W ignore grmm.py -–dataset_path <your_dataset_path>
 ```
 
 ### Example:
 
 ```sh
-python3 grt.py –dataset_path sample
+python3 -W ignore grmm.py --dataset_path sampledata
 ```
 
 Replace `<your_dataset_path>` with the path to your dataset.
@@ -62,16 +62,19 @@ After running the program, the resulting `.task` file will be available in a dir
 --- 
 
 ## Code Structure
-The code is organized as such:
-GRModelMaker/
-│── .gitignore             # Files ignored by Git
-│── grt.py                 # Main script to train the model
-│── README.md              # Project documentation
-│── requirements.txt       # Dependency list
-│── sampledata/            # Sample data, ready-to-go
-│── venv/                  # Virtual environment (excluded from Git)
+
+    .
+    ├── sampledata/       # Sample data, ready-to-go
+    ├── exported_model/   # Script output (excluded from Git)
+    ├── venv/             # Virtual environment (excluded from Git)
+    ├── .gitignore        # Files ignored by Git
+    ├── README.md         # Project documentation
+    ├── grmm.py           # Script to train the model 
+    └── requirements.txt  # Dependency list
 
 --- 
 
 ## Additional Notes
-I recommend using the [HaGRIDv2 (HAnd Gesture Recognition Image Dataset)](https://github.com/hukenovs/hagrid) for hand gesture classification training data. The dataset is huge and features a variety of distinct gestures. If you are running this program locally or are low on space, I would recommend using subsets of HaGRIDv2. I personally can vouch for [hagrid_subsets](https://huggingface.co/datasets/GestureDetectionConnoisseurs/hagrid_subsets) on Hugging Face.
+* I recommend using the [HaGRIDv2 (HAnd Gesture Recognition Image Dataset)](https://github.com/hukenovs/hagrid) for hand gesture classification training data. The dataset is huge and features a variety of distinct gestures. If you are running this program locally or are low on space, I would recommend using subsets of HaGRIDv2. I personally can vouch for [hagrid_subsets](https://huggingface.co/datasets/GestureDetectionConnoisseurs/hagrid_subsets) on Hugging Face.
+* For reference: on an M1 Macbook Air, the program takes around 25 seconds using the sample data. On a 1.4GB dataset, it took around 9 minutes.
+* If you want to customize the model and training process, refer to [Google's official documentation] for a detailed explanation.

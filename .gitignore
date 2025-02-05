@@ -1,5 +1,6 @@
 # Ignore virtual environments
 chau/
+exported_model/
 venv/
 __pycache__/
 *.pyc
