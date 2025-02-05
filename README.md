@@ -23,6 +23,12 @@ Remember you can deactivate/leave the virtual environment with the following:
 ```sh
 deactivate
 ```
+
+### Troubleshooting
+For macOS users, if you encounter compiler issues, set the C++ flags:
+```sh
+export CXXFLAGS="-I$(xcrun --show-sdk-path)/usr/include/c++/v1"
+```
 ---
 
 ## Data Specifications
@@ -77,4 +83,4 @@ After running the program, the resulting `.task` file will be available in a dir
 ## Additional Notes
 * I recommend using the [HaGRIDv2 (HAnd Gesture Recognition Image Dataset)](https://github.com/hukenovs/hagrid) for hand gesture classification training data. The dataset is huge and features a variety of distinct gestures. If you are running this program locally or are low on space, I would recommend using subsets of HaGRIDv2. I personally can vouch for [hagrid_subsets](https://huggingface.co/datasets/GestureDetectionConnoisseurs/hagrid_subsets) on Hugging Face.
 * For reference: on an M1 Macbook Air, the program takes around 25 seconds using the sample data. On a 1.4GB dataset, it took around 9 minutes.
-* If you want to customize the model and training process, refer to [Google's official documentation] for a detailed explanation.
+* If you want to customize the model and training process, refer to [Google's official documentation](https://ai.google.dev/edge/mediapipe/solutions/customization/gesture_recognizer) for a detailed explanation.
